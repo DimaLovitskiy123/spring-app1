@@ -1,6 +1,6 @@
 package ru.dima.springcourse;
 
-public class ComputerMouse extends com.dima.AbstractUsbDevise implements UsbDevise{
+public class ComputerMouse extends AbstractUsbDevise implements UsbDevise{
 
     private final static String mouse = "Мышь";
 

@@ -1,6 +1,6 @@
 package ru.dima.springcourse;
 
-public class KeyBoard extends com.dima.AbstractUsbDevise implements UsbDevise{
+public class KeyBoard extends AbstractUsbDevise implements UsbDevise{
 
     private final static String keyboard = "Клавиатура";
 

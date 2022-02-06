@@ -1,21 +1,20 @@
 package ru.dima.springcourse;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Starter {
     public static void main(String[] args) {
-        com.dima.Computer computer = new com.dima.Computer(getUsbDevises());
+
+        ClassPathXmlApplicationContext context =
+                new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        Computer computer = context.getBean("computerBean", Computer.class);
 
         computer.computerOn();
         System.out.println("");
         computer.computerOff();
-    }
-
-    private static List<UsbDevise> getUsbDevises(){
-        List<UsbDevise> result = new ArrayList();
-        result.add(new KeyBoard("15" ));
-        result.add(new ComputerMouse("1"));
-        return result;
     }
 }

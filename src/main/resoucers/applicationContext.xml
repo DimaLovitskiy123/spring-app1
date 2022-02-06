@@ -3,16 +3,25 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
- http://www.springframework.org/schema/beans/spring-beans.xsd
- http://www.springframework.org/schema/context
- http://www.springframework.org/schema/context/spring-context.xsd">
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="musicBean"
-          class="ru.dima.springcourse.RockMusic">
+    <bean id="computerBean" class="ru.dima.springcourse.Computer">
+        <constructor-arg>
+            <list>
+                <ref bean="keyboardBean"/>
+                <ref bean="computerMouseBean"/>
+            </list>
+        </constructor-arg>
     </bean>
 
-    <bean id="musicPlayer"
-        class="ru.dima.springcourse.MusicPlayer">
-        <constructor-arg ref="musicBean"/>
+    <bean id="keyboardBean" class="ru.dima.springcourse.KeyBoard">
+        <constructor-arg value="15"/>
     </bean>
+
+    <bean id="computerMouseBean" class="ru.dima.springcourse.ComputerMouse">
+        <constructor-arg value="1"/>
+    </bean>
+
 </beans>
